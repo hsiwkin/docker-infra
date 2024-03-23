@@ -21,14 +21,11 @@ services:
     - "5432:5432"
   vectorDb:
     image: ankane/pgvector
+    restart: always
     ports:
       - 5433:5432
     environment:
       - POSTGRES_DB=vector_db
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-  db-adminer:
-    image: adminer
-    restart: always
-    ports:
-    - "9090:8080"
+
